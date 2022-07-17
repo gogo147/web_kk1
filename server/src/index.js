@@ -10,7 +10,9 @@ app.get('/', (req, res) => {
     })
 })
 
-app.use('/api', api)
+app.use(bodyparser.json());
+app.use('/api', api);
+app.use(cors());
 
 app.listen(PORT, () => {
     console.log(`server is running on ${PORT}`)
