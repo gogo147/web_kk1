@@ -1,10 +1,17 @@
-import React from "react";
-import TodoList from "./components/TodoList";
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import TodoList from './components/TodoList';
 
 const App = () => {
-    return(
-        <TodoList />
-    )
-}
+    return (
+        <Container>
+            <Row>
+                <Col md={{ offset: 3, span: 6 }}>
+                    <TodoList />
+                </Col>
+            </Row>
+        </Container>
+    );
+};
 
 export default App;
