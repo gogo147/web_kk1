@@ -10,15 +10,11 @@ const TodoList = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        // TODO: Uncomment the below after you implement the server
-        // axios.get(BASE_URL).then((res) => setItems(res.data));
     }, []);
 
     const onItemCreate = useCallback(
         (newItem) => {
             setItems([...items, { ...newItem, id: items.length }]);
-            // TODO: Uncomment the below after you implement the server
-            // axios.post(BASE_URL, newItem);
         },
         [items]
     );
@@ -31,8 +27,6 @@ const TodoList = () => {
                 item,
                 ...items.slice(index + 1),
             ]);
-            // TODO: Uncomment the below after you implement the server
-            // axios.put(`${BASE_URL}/${item.id}`, { completed: item.completed });
         },
         [items]
     );
@@ -41,8 +35,6 @@ const TodoList = () => {
         (item) => {
             const index = items.findIndex((i) => i.id === item.id);
             setItems([...items.slice(0, index), ...items.slice(index + 1)]);
-            // TODO: Uncomment the below after you implement the server
-            // axios.delete(`${BASE_URL}/${item.id}`);
         },
         [items]
     );
@@ -52,7 +44,7 @@ const TodoList = () => {
             <AddItemForm onItemCreate={onItemCreate} />
             {items && items.length === 0 && (
                 <p className='text-center'>
-                    You have no todo items yet! Add one above!
+                    Add a todo
                 </p>
             )}
             {items &&

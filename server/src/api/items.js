@@ -6,7 +6,6 @@ const cluster = getClientWithKeyspace();
 
 const router = express.Router();
 
-// Create one item
 router.post('/', async (req, res, next) => {
     try {
         const { name } = req.body;
@@ -19,7 +18,6 @@ router.post('/', async (req, res, next) => {
     }
 });
 
-// Get all items
 router.get('/', async (_, res, next) => {
     try {
         const query = 'SELECT * FROM items';
@@ -30,7 +28,6 @@ router.get('/', async (_, res, next) => {
     }
 });
 
-// Update item
 router.put('/:id', async (req, res, next) => {
     try {
         const { id } = req.params;
@@ -43,7 +40,6 @@ router.put('/:id', async (req, res, next) => {
     }
 });
 
-// Delete item
 router.delete('/:id', async (req, res, next) => {
     try {
         const { id } = req.params;
