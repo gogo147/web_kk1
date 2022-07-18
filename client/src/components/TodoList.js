@@ -1,7 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import AddItemForm from './AddItemForm';
 import Item from './Item';
-import axios from 'axios';
 
 const PORT = 3001;
 const BASE_URL = `http://localhost:${PORT}/api/items`;
